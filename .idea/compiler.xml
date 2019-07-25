@@ -6,9 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="RPC-Demo" />
-        <module name="RPC-Client" />
         <module name="RPC-Server" />
+        <module name="RPC-Client" />
+        <module name="RPC-Demo" />
       </profile>
     </annotationProcessing>
   </component>

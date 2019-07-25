@@ -14,9 +14,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ServerCenter implements Server {
-
+    //使用线程池
     private static ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
-
+    //注册服务接口（对外开放指定的接口）
     private static final HashMap<String,Class> serviceRegistry = new HashMap<String, Class>();
 
     private static boolean isRunning = false;
@@ -70,15 +70,15 @@ public class ServerCenter implements Server {
             try {
                 ois = new ObjectInputStream(clientSocket.getInputStream());
                 String serviceName = ois.readUTF();
-                System.out.println("== 请求接口 "+ serviceName + " ==");
+                System.out.println("== 被请求接口 "+ serviceName);
                 String methodName = ois.readUTF();
-                System.out.println("== 请求方法 "+ methodName + " ==");
+                System.out.println("== 被请求方法 "+ methodName);
                 Class<?>[] parameterTypes = (Class<?>[]) ois.readObject();
-                System.out.println("== 参数类型 "+ parameterTypes.toString() + " ==");
+                System.out.println("== 参数类型 " + parameterTypes);
                 Object[] arguments = (Object[]) ois.readObject();
-                System.out.println("== 参数 "+ arguments + " ==");
+                System.out.println("== 参数 " + arguments);
                 Class serviceClass = serviceRegistry.get(serviceName);
-                System.out.println("== 请求接口实例 "+serviceClass.toString() + " ==");
+                System.out.println("== 被请求接口实例 "+serviceClass);
                 if (null == serviceClass){
                     System.out.println("============= "+serviceName+" Not Found ! =============");
                 }
@@ -87,6 +87,7 @@ public class ServerCenter implements Server {
                 System.out.println("== 返回结果 "+ result + " ==");
                 oos = new ObjectOutputStream(clientSocket.getOutputStream());
                 oos.writeObject(result);
+                System.out.println("======================================");
             }catch (Exception e){
                 e.printStackTrace();
             }finally {
