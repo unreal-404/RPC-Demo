@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact name="RPC-Demo:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/RPC_Demo_jar</output-path>
+    <root id="root">
+      <element id="archive" name="RPC-Demo.jar">
+        <element id="module-output" name="RPC-Server" />
+      </element>
+      <element id="library" level="project" name="Maven: org.springframework:spring-core:5.1.8.RELEASE" />
+      <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.8" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-context:5.1.8.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.1.8.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.1.8.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.1.8.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.1.8.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-web:5.1.8.RELEASE" />
+      <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.5.2" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.1.8.RELEASE" />
+    </root>
+  </artifact>
+</component>
